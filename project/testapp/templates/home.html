@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Celery</title>
+</head>
+<body>
+    <div>
+        <a>Celery</a>
+    </div>
+    <form action=" " method="post">{% csrf_token %}
+        <label for="first_num">Input first number: </label>
+        <input id="first_num" type="number" name="first_num">
+        <label for="second_num">Input second number: </label>
+        <input id="second_num" type="number" name="second_num">
+        <button type="submit">Send</button>
+        <div></div>
+        <div><a href="task/{{task_a.task_id}}">task A JSON Response</a></div>
+        <div><a href="task/{{task_b.task_id}}">task B JSON Response</a></div>
+        <div><a href="task/{{task_c.task_id}}">task C JSON Response</a></div>
+
+    </form>
+
+</body>
+</html>

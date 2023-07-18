@@ -1,0 +1,31 @@
+version: 'latest'
+
+services:
+  web_django:
+    build: ./project
+    command: python3 manage.py runserver 0.0.0.0:8000
+    ports:
+      - 8000:8000
+    networks:
+      - django_celery
+    depends_on:
+      - web_redis
+      - web_celery
+
+  web_celery:
+    build: ./project
+    command:  celery -A project worker -l INFO --logfile=celery.log
+    networks:
+      - django_celery
+    depends_on:
+      - web_redis
+
+
+  web_redis:
+    image: redis:7-alpine
+    networks:
+      - django_celery
+
+networks:
+  django_celery:
+    driver: bridge

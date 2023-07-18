@@ -1,0 +1,15 @@
+[2023-07-18 10:21:43,709: WARNING/MainProcess] /opt/homebrew/lib/python3.11/site-packages/celery/worker/consumer/consumer.py:498: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2023-07-18 10:21:43,715: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 61 connecting to localhost:6379. Connection refused..
+Trying again in 2.00 seconds... (1/100)
+
+[2023-07-18 10:21:45,730: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 61 connecting to localhost:6379. Connection refused..
+Trying again in 4.00 seconds... (2/100)
+
+[2023-07-18 10:21:49,749: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 61 connecting to localhost:6379. Connection refused..
+Trying again in 6.00 seconds... (3/100)
+
